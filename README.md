@@ -1,0 +1,2 @@
+# thoughts
+Directory of thoughts
