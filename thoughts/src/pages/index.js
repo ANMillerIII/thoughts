@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -65,7 +65,51 @@ import styles from './styles.module.css';
 //   );
 // }
 
+
+
+
+
 function Home() {
+  const [quote, setQuote] = useState('');
+
+  useEffect(() => {
+    // fetch('http://quotes.rest/quote/random.json')
+  //   fetch("https://type.fit/api/quotes", {
+  //     mode
+  //   })
+  // .then(function(response) {
+  //   return response.json();
+  // })
+  // .then(function(data) {
+  //   console.log(data);
+  // });
+  console.log("start")
+
+    fetch('https://api.quotable.io/random', {
+      mode: 'no-cors',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        // 'X-Theysaidso-Api-Secret': '',
+      }
+    })
+    .then( response => response.json())
+    .then( data => {
+      if (data) {
+        console.log(data);
+        setQuote(data.quote);
+      }
+    })
+    .catch( error => console.log(error))
+
+  }, []);
+
+
+
+
+
+
+
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
@@ -74,9 +118,10 @@ function Home() {
       description="thoughts <head />">
       {/* <header className={clsx('hero hero--primary', styles.heroBanner)}> */}
         <div className="container index_container">
+          {/* <div style={{marginTop: '10vh'}}> </div> */}
+          <p className="hero__title">Welcome</p>
           {/* <p className="hero__title">{siteConfig.title}</p> */}
           {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
-          <div style={{marginTop: '10vh'}}> </div>
             <p>I am a software engineer passionate about sustainability, working at a
                 <a href="https://www.mpr.com">consulting firm</a> in the energy sector based in Washington D.C. Our team
                 supports our client's initiatives towards a more sustainable energy future.

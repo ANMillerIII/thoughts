@@ -29,7 +29,7 @@
   --ifm-color-primary-light: #4e89e8;
   --ifm-color-primary-lighter: #5a91ea;
   --ifm-color-primary-lightest: #80aaef;
-  --ifm-code-font-size: 75%;
+  --ifm-code-font-size: 95%;
 
 }
   /* --ifm-color-primary: #25c2a0;
@@ -43,7 +43,7 @@
 } */
 
 .index_container {
-  width: 50%;
+  width: 35%;
   margin: auto;
   /* text-align: center; */
 }

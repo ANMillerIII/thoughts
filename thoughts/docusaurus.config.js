@@ -10,8 +10,16 @@ module.exports = {
   organizationName: 'ANMillerIII', // Usually your GitHub org/user name.
   projectName: 'Al Miller', // Usually your repo name.
   themeConfig: {
+
+    sidebarCollapsible: false,
+    // hideableSidebar: true,
+
+    prism: {
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/dracula'),
+    },
     colorMode: {
-      disableSwitch: true,
+      disableSwitch: false,
     },
     navbar: {
       title: 'AM',
@@ -20,31 +28,31 @@ module.exports = {
       //   src: 'img/logo.svg',
       // },
       items: [
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'directory',
-          position: 'left',
-        },
+        // {
+        //   to: 'docs/',
+        //   activeBasePath: 'docs',
+        //   label: 'directory',
+        //   position: 'left',
+        // },
         {to: 'blog', label: 'ledger', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: ' ',
-          position: 'right',
-          className: 'header-github-link',
-        },
-        {
-          href: 'https://linkedin.com/in/al-miller',
-          label: ' ',
-          position: 'right',
-          className: 'header-linkedin-link',
-        },
-        {
-          href: 'https://stackoverflow.com/ANMillerIII',
-          label: ' ',
-          position: 'right',
-          className: 'header-github-link',
-        },
+        // {
+        //   href: 'https://github.com/facebook/docusaurus',
+        //   label: ' ',
+        //   position: 'right',
+        //   className: 'header-github-link',
+        // },
+        // {
+        //   href: 'https://linkedin.com/in/al-miller',
+        //   label: ' ',
+        //   position: 'right',
+        //   className: 'header-linkedin-link',
+        // },
+        // {
+        //   href: 'https://stackoverflow.com/ANMillerIII',
+        //   label: ' ',
+        //   position: 'right',
+        //   className: 'header-github-link',
+        // },
       ],
     },
     footer: {
@@ -89,11 +97,11 @@ module.exports = {
             },
           ],
         },
-        {
-          title: 'Everywhere',
-          items: [
-          ],
-        },
+        // {
+        //   title: 'Everywhere',
+        //   items: [
+        //   ],
+        // },
       ],
       // copyright: `Copyright © ${new Date().getFullYear()}. Built with Docusaurus.`,
     },
@@ -102,22 +110,22 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
+        // docs: {
+        //   // sidebarPath: require.resolve('./sidebars.js'),
+        //   // Please change this to your repo.
+        //   // editUrl:
+        //   //   'https://github.com/facebook/docusaurus/edit/master/website/',
+            
+        // },
         blog: {
           showReadingTime: false,
           // Please change this to your repo.
           // showEditUrl: false,
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        
       },
     ],
   ],
